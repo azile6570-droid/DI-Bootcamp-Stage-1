@@ -1,0 +1,71 @@
+#1. Add Two Numbers
+def add_two_numbers(a, b):
+    return 3 + 5
+print(add_two_numbers(3, 5))
+
+def add_two_numbers(a, b):
+    return 10 + 20
+print(add_two_numbers(3, 5))
+
+#2.Print a Greeting
+def greetings(Alice):
+    return "Hello, " + Alice + "!"
+print(greetings("Alice"))
+
+def greetings(Bob):
+    return "Hello, " + Bob + "!"
+print(greetings("Bob"))
+
+#3. check if a Number is Even or Odd 
+def check_even_odd(number):
+    if number % 2 == 0:
+        return "Even"
+    else:
+        return "Odd"
+print(check_even_odd(4))
+print(check_even_odd(7))
+
+#4. Sum of numbers in a list
+def sum_list(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+print(sum_list([1, 2, 3, 4,]))
+
+def sum_list(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+print(sum_list([5,5,5]))
+
+#5. print the days of the week
+def print_days():
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    for day in days:
+        print(day)
+
+#6.check if a number is positive, negative, or zero 
+def check_sign(number):
+    if number > 0:
+        print("Positive")
+    elif number < 0:
+        print("Negative")
+    else:
+        print("Zero")
+
+check_sign(10)
+check_sign(-5)
+check_sign(0)
+
+#7. Repeat a word
+def repeat_word(word, times):
+    return word * times
+print(repeat_word("Hello", 3))
+
+def repeat_word(word, times):
+    return word * times
+print(repeat_word("goodbye", 3))
+
+

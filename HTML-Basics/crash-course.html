@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Challenge || Materialize CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+        .hero-section {
+            background: url('https://images.pexels.com/photos/1756062/pexels-photo-1756062.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+            height: 60vh;
+            position: relative;
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.5);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section-padding {
+            padding: 50px 0;
+        }
+        .card-image img {
+            height: 220px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Header -->
+    <div class="navbar-fixed">
+        <nav class="amber darken-2">
+            <div class="nav-wrapper container">
+                <a href="#home" class="brand-logo bold">Lizzys Delight</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Sidenav -->
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+
+    <!-- Hero Section -->
+    <div id="home" class="hero-section">
+        <div class="hero-overlay white-text center">
+            <div>
+                <h1 class="bold"> SWEETEST EVERYWHERE</h1>
+             <p class="flow-text">Arsoted breads, Fresh paistries & Sweets Sliced cakes made with love.</p>
+                <a href="#products" class="btn-large waves-effect waves-light amber darken-3">Explore Menu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about" class="section-padding container">
+        <div class="row">
+            <div class="col s12 m6">
+                <h3 class="amber-text text-darken-3">Our Story</h3>
+                <p class="flow-text">At Lizzys Delight, we believe that joy comes with every bite. Founded in 2026, our bakery combines traditional recipes with high-quality ingredients to craft the finest baked goods in town.</p>
+                <p>From early morning sourdough loaves to delicate afternoon pastries, our dedicated team of bakers works around the clock to bring warmth to your table.</p>
+            </div>
+            <div class="col s12 m6">
+                <img class="responsive-img z-depth-2 rounded" src="https://images.pexels.com/photos/8027652/pexels-photo-8027652.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Bakery Kitchen">
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div id="products" class="grey lighten-4 section-padding">
+        <div class="container">
+            <h3 class="center amber-text text-darken-3">Featured Delights</h3>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/230743/pexels-photo-230743.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Arsoted Breads">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title bold">Artisan Breads</span>
+                            <p>Handcrafted sourdough, baguettes, and whole wheat loaves baked crisp daily.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/1775035/pexels-photo-1775035.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Fresh Pastries & Sweet">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title bold">French Pastries</span>
+                            <p>Flaky croissants, fruit tarts, and buttery pastries crafted by expert chefs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="col s12 m6 l4">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://images.pexels.com/photos/1028704/pexels-photo-1028704.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Custom Cakes">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title bold">Custom Cakes</span>
+                            <p>Beautifully designed multi-layer cakes tailored for birthdays and weddings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div id="contact" class="section-padding container">
+        <h3 class="center amber-text text-darken-3">Get in Touch</h3>
+        <p class="center">Have a question or custom cake order? Drop us a line below!</p>
+        
+        <div class="row">
+            <form class="col s12 m8 offset-m2">
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="first_name" type="text" class="validate" required>
+                        <label for="first_name">First Name</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="last_name" type="text" class="validate" required>
+                        <label for="last_name">Last Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate" required>
+                        <label for="email">Email Address</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">message</i>
+                        <textarea id="message" class="materialize-textarea" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                </div>
+                <div class="center">
+                    <button class="btn waves-effect waves-light amber darken-3" type="submit">
+                        Send Message <i class="material-icons right">send</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer amber darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="">#f50057 pink accent-3
+                    <h5 class="white-text">Lizzys Delight</h5>
+                    <p class="grey-text text-lighten-4">Bringing freshness and sweetness to your neighborhood every single day.</p>
+                </div>
+                <div class="">
+               #f50057 pink accent-3     <h5 class="white-text">Hours</h5>
+                    <p class="grey-text text-lighten-4">Mon - Sat: 7:00 AM - 7:00 PM<br>Sun: 8:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright amber darken-4">
+            <div class="container center">
+                © 2026 Lizzys Delight. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize mobile sidenav menu
+            var sidenavElems = document.querySelectorAll('.sidenav');
+            M.Sidenav.init(sidenavElems);
+        });
+    </script>
+</body>

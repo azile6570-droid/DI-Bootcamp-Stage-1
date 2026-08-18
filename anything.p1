@@ -1,0 +1,8 @@
+# Looping through a iterable - list
+prime_numbers = [2, 3, 5, 7, 11]
+
+for num in prime_numbers:
+    print(num**2)  # Printing the square of each number
+
+
+      

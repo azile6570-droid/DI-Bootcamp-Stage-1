@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tribute to Jomo Kenyatta</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #222;
+        }
+
+        header {
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.65),
+                rgba(0, 0, 0, 0.65)
+            ),
+            url("https://commons.wikimedia.org/wiki/Special:FilePath/Jomo_Kenyatta.jpg")
+            center/cover;
+
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.3rem;
+        }
+
+        .dates {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #111;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #006b3c;
+        }
+
+        .intro {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 1.1rem;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .timeline::after {
+            content: "";
+            position: absolute;
+            width: 4px;
+            background: #006b3c;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .event {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .event.left {
+            left: 0;
+            text-align: right;
+        }
+
+        .event.right {
+            left: 50%;
+        }
+
+        .event-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        }
+
+        .event h3 {
+            color: #bb0000;
+            margin-bottom: 8px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .gallery-card p {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .quote {
+            background: #006b3c;
+            color: white;
+            text-align: center;
+            padding: 50px 25px;
+            border-radius: 10px;
+        }
+
+        .quote blockquote {
+            font-size: 1.7rem;
+            font-style: italic;
+        }
+
+        .legacy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .legacy-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .legacy-card h3 {
+            color: #bb0000;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer a {
+            color: #90ee90;
+        }
+
+        @media (max-width: 700px) {
+            header h1 {
+                font-size: 2.4rem;
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .event {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+            }
+
+            .event.left,
+            .event.right {
+                left: 0;
+                text-align: left;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION -->
+    <header>
+        <h1>Jomo Kenyatta</h1>
+        <p>Father of the Kenyan Nation</p>
+
+        <div class="dates">
+            20 October 1893 – 22 August 1978
+        </div>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#tribute">Tribute</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#gallery">Photos</a>
+        <a href="#legacy">Legacy</a>
+    </nav>
+
+    <!-- TRIBUTE -->
+    <section id="tribute">
+        <h2>A Tribute to Jomo Kenyatta</h2>
+
+        <div class="intro">
+            <p>
+                Jomo Kenyatta was a Kenyan statesman, political leader and
+                one of the principal figures in Kenya's struggle for
+                independence. He became Kenya's first Prime Minister in 1963
+                and served as the country's first President from 1964 until
+                his death in 1978.
+            </p>
+
+            <br>
+
+            <p>
+                His life remains an important part of Kenya's history and
+                national identity. He is remembered for his role in the
+                transition from colonial rule to an independent Kenyan state.
+            </p>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline">
+        <h2>Jomo Kenyatta Timeline</h2>
+
+        <div class="timeline">
+
+            <div class="event left">
+                <div class="event-content">
+                    <h3>20 October 1893</h3>
+                    <p>
+                        Jomo Kenyatta was born in Gatundu, in what is now
+                        Kiambu County, Kenya.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event right">
+                <div class="event-content">
+                    <h3>1920s</h3>
+                    <p>
+                        Kenyatta became increasingly involved in political
+                        activism and the struggle for African rights in
+                        colonial Kenya.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event left">
+                <div class="event-content">
+                    <h3>1928</h3>
+                    <p>
+                        He became the first Secretary General of the Kikuyu
+                        Central Association.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event right">
+                <div class="event-content">
+                    <h3>1938</h3>
+                    <p>
+                        His influential book
+                        <em>Facing Mount Kenya</em> was published.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event left">
+                <div class="event-content">
+                    <h3>1952</h3>
+                    <p>
+                        Kenyatta was arrested by the colonial government
+                        during the period of the Mau Mau uprising.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event right">
+                <div class="event-content">
+                    <h3>1961</h3>
+                    <p>
+                        After years of detention, Kenyatta was released,
+                        becoming an increasingly central figure in Kenya's
+                        independence movement.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event left">
+                <div class="event-content">
+                    <h3>12 December 1963</h3>
+                    <p>
+                        Kenya gained independence from British colonial rule.
+                        Jomo Kenyatta became the country's first Prime Minister.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event right">
+                <div class="event-content">
+                    <h3>12 December 1964</h3>
+                    <p>
+                        Kenya became a republic, and Jomo Kenyatta became
+                        the country's first President.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event left">
+                <div class="event-content">
+                    <h3>1964–1978</h3>
+                    <p>
+                        Kenyatta served as President of Kenya during the
+                        country's early years as an independent republic.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event right">
+                <div class="event-content">
+                    <h3>22 August 1978</h3>
+                    <p>
+                        Jomo Kenyatta died in Mombasa at the age of 84.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallery">
+        <h2>Photo Gallery</h2>
+
+        <div class="gallery">
+
+            <div class="gallery-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/Jomo_Kenyatta.jpg"
+                    alt="Jomo Kenyatta in 1966">
+                <p>
+                    <strong>Jomo Kenyatta, 1966</strong><br>
+                    Historical photograph from the German Federal Archive.
+                </p>
+            </div>
+
+            <div class="gallery-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/JOMO_KENYATTA.JPG"
+                    alt="Jomo Kenyatta monument in Nairobi">
+                <p>
+                    <strong>Jomo Kenyatta Monument</strong><br>
+                    A monument commemorating Kenya's first president.
+                </p>
+            </div>
+
+            <div class="gallery-card">
+                <img
+                    src="https://commons.wikimedia.org/wiki/Special:FilePath/1976-1_(cropped).jpg"
+                    alt="Jomo Kenyatta historical photograph">
+                <p>
+                    <strong>Jomo Kenyatta</strong><br>
+                    Historical image from the Wikimedia Commons collection.
+                </p>
+            </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top:25px;">
+            </a>.
+        </p>
+    </section>
+
+    <!-- QUOTE -->
+    <section>
+        <div class="quote">
+            <blockquote>
+                “Our children may learn about the heroes of the past.
+                Our task is to make ourselves the architects of the future.”
+            </blockquote>
+
+            <p style="margin-top:15px;">
+                — Jomo Kenyatta
+            </p>
+        </div>
+    </section>
+
+    <!-- LEGACY -->
+    <section id="legacy">
+        <h2>His Legacy</h2>
+
+        <div class="legacy">
+
+            <div class="legacy-card">
+                <h3>Independence</h3>
+                <p>
+                    Played a major role in Kenya's transition from colonial
+                    rule to independence.
+                </p>
+            </div>
+
+            <div class="legacy-card">
+                <h3>Leadership</h3>
+                <p>
+                    Served as Kenya's first Prime Minister and first President.
+                </p>
+            </div>
+
+            <div class="legacy-card">
+                <h3>Education</h3>
+                <p>
+                    His writings, including <em>Facing Mount Kenya</em>,
+                    contributed to international understanding of Kenyan
+                    society and culture.
+                </p>
+            </div>
+
+            <div class="legacy-card">
+                <h3>National Memory</h3>
+                <p>
+                    His name continues to be associated with major Kenyan
+                    institutions, roads, airports and monuments.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Tribute to Jomo Kenyatta
+        </p>
+
+        <p>
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
