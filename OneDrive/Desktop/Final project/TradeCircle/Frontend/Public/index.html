@@ -1,0 +1,1212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TradeCircle connects retailers and suppliers through wholesale deals and group buying.">
+  <title>TradeCircle | Wholesale, United.</title>
+
+  <!-- Bulma: layout and responsive components -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <!-- Our own styles must follow the frameworks -->
+  <link rel="stylesheet" href="style.css?v=31">
+</head>
+
+<body>
+  <!-- Announcement -->
+  <div class="announcement">
+    A better way to stock your shop — together.
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar is-white tc-navbar" role="navigation" aria-label="main navigation">
+    <div class="container is-fluid px-5">
+      <div class="navbar-brand">
+        <a class="navbar-item brand has-text-weight-bold" href="index.html">
+          <img class="tradecircle-logo-image" src="tradecircle-logo.png" alt="">
+          <span class="tradecircle-wordmark"><span>TradeCircle</span><small>Wholesale, United.</small></span>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu"
+           aria-expanded="false" data-target="mainNavigation">
+          <span></span><span></span><span></span>
+          <span></span>
+        </a>
+      </div>
+
+      <div id="mainNavigation" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#home">Home</a>
+          <a class="navbar-item" href="#how-it-works">How it works</a>
+          <a class="navbar-item" href="#why-tradecircle">Why TradeCircle</a>
+          <a class="navbar-item" href="#faqs">FAQs</a>
+          <a class="navbar-item" href="#contact">Contact</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item" id="navSearchItem">
+            <label class="search-box">
+              <i class="fas fa-search"></i>
+              <input id="searchInput" type="search"
+                     placeholder="Find wholesale products..."
+                     aria-label="Search wholesale products">
+            </label>
+          </div>
+          <div class="navbar-item" id="navShopItem">
+            <a class="button is-link" href="#products">
+              <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+              <span>Shop Wholesale</span>
+            </a>
+          </div>
+          <div class="navbar-item" id="cartNavItem">
+            <button id="cartButton" class="button cart-button">
+              <i class="fas fa-shopping-bag mr-2"></i>
+              Cart <span id="cartCount" class="cart-count">0</span>
+            </button>
+          </div>
+          <div class="navbar-item" id="navDashboardItem">
+            <button id="dashboardLink" class="button sign-in-button" hidden>
+              Dashboard
+            </button>
+          </div>
+          <div class="navbar-item">
+            <a id="navGetStartedButton" class="button landing-get-started" href="auth.html?mode=register">
+              Get started <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero-section">
+      <div class="container is-fluid px-5">
+        <div class="columns is-vcentered is-variable is-8">
+          <div class="column is-6">
+            <span class="eyebrow"><i class="fas fa-building mr-2" aria-hidden="true"></i>KENYA'S B2B WHOLESALE MARKETPLACE</span>
+
+            <h1 class="hero-title">
+              Wholesale,<br>
+              <span>United.</span>
+            </h1>
+
+            <p class="hero-tagline">Connect. Trade. Grow. Together.</p>
+
+            <p class="hero-copy">
+              Buy, sell, and grow your business through trusted wholesale listings
+              and group purchasing built for Kenyan businesses.
+            </p>
+
+            <div class="hero-actions">
+              <a id="getStartedButton" class="button primary-button" href="auth.html?mode=register">
+                Get started <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i>
+              </a>
+              <a href="#how-it-works" class="button secondary-button hero-learn-more">
+                Learn more <i class="fas fa-circle-play ml-2" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="hero-trust">
+              <span><i class="fas fa-check-circle" aria-hidden="true"></i> Made for local shops</span>
+              <span><i class="fas fa-check-circle" aria-hidden="true"></i> Clear bulk minimums</span>
+              <span><i class="fas fa-check-circle" aria-hidden="true"></i> Supplier details up front</span>
+            </div>
+          </div>
+
+          <div class="column is-6">
+            <div class="hero-visual">
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=85"
+                alt="Organized wholesale inventory ready for distribution">
+              <div class="hero-tradecircle-emblem" aria-hidden="true"><span>T</span><span>C</span></div>
+
+              <div class="floating-card floating-top">
+                <span class="floating-icon"><i class="fas fa-boxes-stacked"></i></span>
+                <span>
+                  <strong>Stock up together</strong>
+                  <small>More buying power for your shop</small>
+                </span>
+              </div>
+
+              <div class="floating-card floating-bottom">
+                <span class="status-dot"></span>
+                <span>
+                  <strong>Small shops, stronger together</strong>
+                  <small>Join a shared order when it suits you</small>
+                </span>
+              </div>
+
+              <div class="hero-visual-caption">
+                <span>BETTER BUYING, BUILT TOGETHER</span>
+                <strong>Good things grow when shops work together.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section dashboard-section" hidden>
+      <div class="container is-fluid px-5">
+        <div class="dashboard-layout">
+          <aside class="dashboard-sidebar">
+            <a class="dashboard-sidebar-brand" href="index.html">
+              <img class="brand-icon tradecircle-logo-image" src="tradecircle-logo.png" alt="">
+              <span>Trade<span class="brand-gold">Circle</span></span>
+            </a>
+            <p id="dashboardWorkspaceLabel" class="dashboard-sidebar-label">WORKSPACE</p>
+            <nav id="dashboardNav" class="dashboard-nav" aria-label="Dashboard sections"></nav>
+            <div class="dashboard-sidebar-account">
+              <span class="dashboard-account-avatar" id="dashboardAvatar">
+                <img class="dashboard-avatar-logo" src="tradecircle-logo.png" alt="">
+              </span>
+              <span><strong id="dashboardAccountName"></strong><small id="dashboardAccountRole"></small></span>
+            </div>
+          </aside>
+          <div class="dashboard-main">
+        <div class="section-heading">
+          <div>
+            <span id="dashboardEyebrow" class="eyebrow">YOUR TRADECIRCLE</span>
+            <h2 id="dashboardTitle">Dashboard</h2>
+            <p id="dashboardDescription"></p>
+          </div>
+          <button id="dashboardRefresh" class="button secondary-button" type="button">
+            <i class="fas fa-rotate mr-2"></i>Refresh
+          </button>
+        </div>
+        <p id="dashboardError" class="dashboard-error" role="alert" hidden></p>
+        <div id="dashboardModeControls" class="dashboard-mode-controls" role="group"
+             aria-label="Marketplace mode" hidden>
+          <button class="button secondary-button" type="button" data-dashboard-mode="buying">Buying Mode</button>
+          <button class="button secondary-button" type="button" data-dashboard-mode="selling">Selling Mode</button>
+        </div>
+
+        <div id="buyerDashboard" hidden>
+          <div class="dashboard-panel" data-dashboard-panel="overview">
+          <div class="dashboard-stats">
+            <article class="dashboard-stat"><span>Orders placed</span><strong id="buyerOrderCount">0</strong><small>Across your account</small></article>
+            <article class="dashboard-stat"><span>Products to explore</span><strong id="buyerProductCount">0</strong><small>Approved wholesale listings</small></article>
+          </div>
+          <div class="dashboard-card quick-order-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h3>Quick order pad</h3>
+                <p>Add several products to one cart. Minimum order quantities and available stock are shown for each item.</p>
+              </div>
+              <i class="fas fa-basket-shopping quick-order-icon" aria-hidden="true"></i>
+            </div>
+            <form id="quickOrderForm">
+              <div id="quickOrderLines" class="quick-order-lines"></div>
+              <div class="quick-order-actions">
+                <button class="button secondary-button" type="button" data-add-quick-order-line>
+                  <i class="fas fa-plus mr-2" aria-hidden="true"></i>Add another item
+                </button>
+                <button id="quickOrderSubmit" class="button primary-button" type="submit">
+                  Add items to cart
+                </button>
+              </div>
+              <p id="quickOrderEmpty" class="dashboard-empty" hidden>
+                No approved products are available to order yet.
+              </p>
+            </form>
+          </div>
+          <div class="dashboard-card">
+            <div class="dashboard-card-heading">
+              <div>
+                <h3>Marketplace</h3>
+                <p>Browse approved wholesale listings and add items to your cart.</p>
+              </div>
+              <a class="button primary-button" href="#products">Explore marketplace</a>
+            </div>
+          </div>
+          <section id="products" class="section tc-section">
+            <div class="container is-fluid px-5">
+              <div class="section-heading">
+                <div>
+                  <span class="eyebrow">BUSINESS ESSENTIALS</span>
+                  <h2>Wholesale <span>marketplace</span></h2>
+                  <p>Wholesale essentials for Kenyan shops, priced per bag, bale, jerrycan, or carton. Check bulk minimums and stock before ordering.</p>
+                </div>
+              </div>
+
+              <div class="product-toolbar">
+                <div id="categoryFilters" class="filter-list">
+                  <button class="filter-button active" data-filter="All">All products</button>
+                  <button class="filter-button" data-filter="Groceries">Groceries</button>
+                  <button class="filter-button" data-filter="Electronics">Electronics</button>
+                  <button class="filter-button" data-filter="Home & Cleaning">Home & Cleaning</button>
+                  <button class="filter-button" data-filter="Packaging">Packaging</button>
+                  <button class="filter-button saved-filter-button" id="savedProductsFilter"
+                          type="button" aria-label="Show saved products">
+                    <i class="far fa-heart" aria-hidden="true"></i>
+                    Saved <span id="wishlistCount">0</span>
+                  </button>
+                </div>
+
+                <label class="sort-label">
+                  Sort:
+                  <select id="sortSelect" aria-label="Sort products">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: low to high</option>
+                    <option value="price-high">Price: high to low</option>
+                    <option value="name">Name: A to Z</option>
+                  </select>
+                </label>
+              </div>
+
+              <div id="productGrid" class="columns is-multiline"></div>
+
+              <p id="emptyProducts" class="empty-message" hidden>
+                No approved products are available yet.
+              </p>
+            </div>
+          </section>
+          <nav class="mobile-dock" aria-label="Quick marketplace links">
+            <a class="mobile-dock-link" href="#products">
+              <span class="dock-icon"><i class="fas fa-store" aria-hidden="true"></i></span>
+              <span>Shop</span>
+            </a>
+            <button class="mobile-dock-link" id="mobileCartButton" type="button"
+                    aria-label="Open shopping cart" aria-controls="cartOverlay">
+              <span class="dock-icon">
+                <i class="fas fa-basket-shopping" aria-hidden="true"></i>
+                <span class="mobile-cart-count" id="mobileCartCount" aria-hidden="true">0</span>
+              </span>
+              <span>My cart</span>
+            </button>
+          </nav>
+          <div id="supplierApplicationCard" class="dashboard-card supplier-application-card">
+            <h3>Apply to become a supplier</h3>
+            <p id="supplierApplicationStatus" class="dashboard-help">Your buyer account can apply for selling access. An admin must approve your business before supplier tools are enabled.</p>
+            <form id="supplierApplicationForm" class="dashboard-form">
+              <label>Business name
+                <input name="business_name" type="text" minlength="2" maxlength="180" required>
+              </label>
+              <label class="dashboard-form-wide">Business details for review (optional)
+                <textarea name="application_note" rows="3" maxlength="1000"
+                          placeholder="What products do you supply?"></textarea>
+              </label>
+              <div class="dashboard-form-wide">
+                <button id="supplierApplicationButton" class="button primary-button" type="submit">
+                  Submit supplier application
+                </button>
+              </div>
+            </form>
+          </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="orders" hidden>
+            <div class="dashboard-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h3>Your orders</h3>
+                  <p>Track order status and fulfillment updates from suppliers.</p>
+                </div>
+                <button id="buyerCartButton" class="button primary-button" type="button">
+                  <i class="fas fa-bag-shopping mr-2"></i>Open cart
+                </button>
+              </div>
+              <div id="buyerOrders" class="dashboard-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="sellerDashboard" hidden>
+          <div class="dashboard-panel" data-dashboard-panel="overview">
+            <div class="dashboard-profile-card">
+              <div>
+                <span class="eyebrow">SUPPLIER WORKSPACE</span>
+                <h3 id="sellerWelcome">Your wholesale store</h3>
+                <p>Manage your catalogue, stock, and buyer orders from one place.</p>
+              </div>
+              <div class="dashboard-profile-mark"><i class="fas fa-store"></i></div>
+            </div>
+            <div class="dashboard-stats">
+              <article class="dashboard-stat"><span>Product listings</span><strong id="sellerProductCount">0</strong><small>Including pending review</small></article>
+              <article class="dashboard-stat"><span>Awaiting approval</span><strong id="sellerPendingCount">0</strong><small>Visible after admin approval</small></article>
+              <article class="dashboard-stat"><span>Order items</span><strong id="sellerOrderCount">0</strong><small>Across your product range</small></article>
+            </div>
+            <div class="dashboard-card">
+              <h3>How buyers pay your business</h3>
+              <p class="dashboard-help">Choose the payment methods you accept and give buyers the details they need. Buyers pay you directly; you confirm receipt in each order.</p>
+              <form id="supplierPaymentSettingsForm" class="dashboard-form">
+                <fieldset class="supplier-payment-methods dashboard-form-wide">
+                  <legend>Accepted payment methods</legend>
+                  <div class="supplier-payment-method-list">
+                    <label><input type="checkbox" name="payment_methods" value="mpesa"> M-Pesa</label>
+                    <label><input type="checkbox" name="payment_methods" value="bank_transfer"> Bank transfer</label>
+                    <label><input type="checkbox" name="payment_methods" value="card"> Card</label>
+                    <label><input type="checkbox" name="payment_methods" value="cash"> Cash / in person</label>
+                    <label><input type="checkbox" name="payment_methods" value="other"> Other</label>
+                  </div>
+                </fieldset>
+                <label class="dashboard-form-wide">Payment details and instructions
+                  <textarea name="payment_instructions" rows="4" maxlength="2000"
+                            placeholder="For example: M-Pesa PayBill/Till number, account reference, bank account details, or cash collection arrangements." required></textarea>
+                </label>
+                <div class="dashboard-form-wide">
+                  <button class="button primary-button" type="submit">Save payment settings</button>
+                </div>
+              </form>
+            </div>
+            <div class="dashboard-card dashboard-quick-actions">
+              <div><h3>Grow your wholesale store</h3><p>Add bulk listings with pack sizes, stock, pricing, and product photos.</p></div>
+              <button class="button primary-button" type="button" data-open-dashboard-view="products">Manage products</button>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-card-heading"><div><h3>Recent orders</h3><p>Latest buyer orders for your products.</p></div><button class="text-link dashboard-text-button" type="button" data-open-dashboard-view="orders">View all orders <i class="fas fa-arrow-right ml-1"></i></button></div>
+              <div id="sellerRecentOrders" class="dashboard-list"></div>
+            </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="products" hidden>
+          <div class="dashboard-card">
+            <h3>Add a product</h3>
+            <p id="supplierVerificationNotice" class="supplier-verification-notice" role="status" hidden>
+              Admin approval is required before your account can access supplier tools.
+            </p>
+            <p class="dashboard-help">New listings are sent to an admin for approval before buyers can see them.</p>
+            <form id="sellerProductForm" class="dashboard-form">
+              <label>Product name
+                <input name="name" type="text" minlength="2" maxlength="180" required>
+              </label>
+              <label>Category
+                <select name="category" required>
+                  <option value="Groceries">Groceries</option>
+                  <option value="Electronics">Electronics</option>
+                  <option value="Home & Cleaning">Home &amp; Cleaning</option>
+                  <option value="Packaging">Packaging</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label>Price per package (KES)
+                <input name="wholesale_price" type="number" min="0" step="0.01" required>
+              </label>
+              <label>Sold as
+                <select name="unit_label" required>
+                  <option value="bag">Bag</option>
+                  <option value="sack">Sack</option>
+                  <option value="carton">Carton</option>
+                  <option value="case">Case</option>
+                  <option value="bale">Bale</option>
+                  <option value="crate">Crate</option>
+                  <option value="jerrycan">Jerrycan</option>
+                  <option value="drum">Drum</option>
+                  <option value="bundle">Bundle</option>
+                  <option value="unit">Unit</option>
+                </select>
+              </label>
+              <label>Minimum order (packages)
+                <input name="minimum_quantity" type="number" min="1" step="1" value="10" required>
+              </label>
+              <label>Available packages in stock
+                <input name="stock_quantity" type="number" min="0" step="1" value="0" required>
+              </label>
+              <label>Image URL (optional)
+                <input name="image_url" type="url" maxlength="2000" placeholder="https://...">
+              </label>
+              <label class="dashboard-form-wide">Description
+                <textarea name="description" rows="3" maxlength="5000"></textarea>
+              </label>
+              <div class="dashboard-form-wide">
+                <button class="button primary-button" type="submit">Submit listing for approval</button>
+              </div>
+            </form>
+          </div>
+          <div class="dashboard-card">
+            <h3>Your listings</h3>
+            <div id="sellerProducts" class="dashboard-list"></div>
+          </div>
+          <div class="dashboard-card">
+            <h3>Your featured group-deal requests</h3>
+            <p class="dashboard-help">Only admins can publish requested group deals.</p>
+            <div id="sellerDealRequests" class="dashboard-list"></div>
+          </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="orders" hidden>
+          <div class="dashboard-card">
+            <div class="dashboard-card-heading"><div><h3>Orders for your products</h3><p>Update fulfillment progress and keep buyers informed.</p></div></div>
+            <div id="sellerOrders" class="dashboard-list"></div>
+          </div>
+          </div>
+        </div>
+
+        <div id="salesDashboard" hidden>
+          <div class="dashboard-panel" data-dashboard-panel="overview">
+            <div class="sales-welcome-card">
+              <span class="eyebrow">SALES &amp; ACCOUNT MANAGEMENT</span>
+              <h3>Keep every business relationship moving.</h3>
+              <p>See buyer activity, follow-ups, and quote requests using real TradeCircle records.</p>
+            </div>
+            <div class="dashboard-stats">
+              <article class="dashboard-stat"><span>Buyer accounts</span><strong id="salesBuyerCount">0</strong><small>Active marketplace buyers</small></article>
+              <article class="dashboard-stat"><span>Orders</span><strong id="salesOrderCount">0</strong><small>Marketplace orders placed</small></article>
+              <article class="dashboard-stat"><span>Confirmed payments</span><strong id="salesPaidTotal">KES 0</strong><small>Supplier-confirmed or provider-verified</small></article>
+              <article class="dashboard-stat"><span>Open follow-ups</span><strong id="salesFollowupCount">0</strong><small>Your client reminders</small></article>
+            </div>
+            <div class="dashboard-card">
+              <div class="dashboard-card-heading">
+                <div><h3>Client work, all in one place</h3><p>Look up any buyer, review real orders and payment records, and track your follow-ups and RFQs.</p></div>
+                <div class="dashboard-card-actions">
+                  <button class="button secondary-button" type="button" data-open-dashboard-view="products">Browse products</button>
+                  <button class="button primary-button" type="button" data-open-dashboard-view="clients">Browse clients</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="products" hidden>
+          <section class="dashboard-card">
+            <div class="admin-page-heading">
+              <div><span class="eyebrow">WHOLESALE CATALOG</span><h3>Approved products</h3><p>Read-only catalog access for client conversations, including current wholesale pricing, bulk minimums, and available stock.</p></div>
+              <span id="salesProductCount" class="sales-product-count">0 approved products</span>
+            </div>
+            <div class="admin-toolbar sales-product-toolbar">
+              <label class="admin-queue-search"><i class="fas fa-search" aria-hidden="true"></i><input id="salesProductSearch" type="search" placeholder="Search products, categories, or suppliers" aria-label="Search products"></label>
+              <select id="salesProductCategory" aria-label="Filter products by category"><option value="all">All categories</option></select>
+            </div>
+            <div id="salesProducts" class="sales-product-list" aria-live="polite"></div>
+          </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="clients" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">BUYER RELATIONSHIPS</span><h3>Client accounts</h3><p>Buyer contact and transaction details from TradeCircle account records.</p></div></div>
+              <label class="admin-queue-search"><i class="fas fa-search" aria-hidden="true"></i><input id="salesClientSearch" type="search" placeholder="Business, buyer, or email" aria-label="Search buyer accounts"></label>
+              <div id="salesClients" class="sales-client-list"></div>
+              <div id="salesClientDetail" class="sales-client-detail" hidden></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="follow-ups" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">CLIENT RELATIONSHIPS</span><h3>Follow-ups</h3><p>Private working notes and reminders visible to your sales account.</p></div></div>
+              <form id="salesFollowupForm" class="dashboard-form">
+                <label>Buyer account
+                  <select name="buyer_id" id="salesFollowupBuyer" required></select>
+                </label>
+                <label>Follow-up title
+                  <input name="title" type="text" minlength="2" maxlength="180" required placeholder="Call about next wholesale order">
+                </label>
+                <label>Due date (optional)
+                  <input name="due_at" type="date">
+                </label>
+                <label class="dashboard-form-wide">Notes (optional)
+                  <textarea name="notes" rows="3" maxlength="2000"></textarea>
+                </label>
+                <div class="dashboard-form-wide"><button class="button primary-button" type="submit">Save follow-up</button></div>
+              </form>
+              <div id="salesFollowups" class="sales-record-list"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="rfqs" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">REQUESTS &amp; QUOTES</span><h3>RFQ and quote tracking</h3><p>Keep internal records of buyer requirements and draft prices. This workspace does not send quotes to buyers or suppliers.</p></div></div>
+              <form id="salesRfqForm" class="dashboard-form">
+                <label>Buyer account
+                  <select name="buyer_id" id="salesRfqBuyer" required></select>
+                </label>
+                <label>Quantity requested
+                  <input name="quantity" type="number" min="1" max="100000" step="1" required>
+                </label>
+                <label>Target price (KES, optional)
+                  <input name="target_price" type="number" min="0" step="0.01">
+                </label>
+                <label>Needed by (optional)
+                  <input name="needed_by" type="date">
+                </label>
+                <label class="dashboard-form-wide">Product and buyer requirements
+                  <textarea name="requirements" rows="3" minlength="5" maxlength="5000" required placeholder="Product, pack size, delivery area, and other requirements"></textarea>
+                </label>
+                <div class="dashboard-form-wide"><button class="button primary-button" type="submit">Record RFQ</button></div>
+              </form>
+              <div id="salesRfqList" class="sales-record-list"></div>
+            </section>
+          </div>
+        </div>
+
+        <div id="adminDashboard" hidden>
+          <div class="dashboard-panel" data-dashboard-panel="overview">
+            <div class="admin-overview-heading">
+              <div>
+                <span class="eyebrow">MARKETPLACE OPERATIONS</span>
+                <h3>Overview</h3>
+                <p>Review marketplace activity and keep the supplier network moving.</p>
+              </div>
+              <span class="admin-live-status"><span></span>All systems operational</span>
+            </div>
+            <div class="dashboard-stats admin-overview-stats">
+              <article class="dashboard-stat admin-metric-card">
+                <span><i class="fas fa-users" aria-hidden="true"></i> Marketplace accounts</span>
+                <strong id="adminAccountCount">0</strong>
+                <small>Buyers and suppliers</small>
+              </article>
+              <article class="dashboard-stat admin-metric-card">
+                <span><i class="fas fa-store" aria-hidden="true"></i> Verified suppliers</span>
+                <strong id="adminSupplierCount">0</strong>
+                <small>Approved selling accounts</small>
+              </article>
+              <article class="dashboard-stat admin-metric-card">
+                <span><i class="fas fa-truck-fast" aria-hidden="true"></i> Orders placed</span>
+                <strong id="adminOrderCount">0</strong>
+                <small>Across the marketplace</small>
+              </article>
+              <article class="dashboard-stat admin-metric-card">
+                <span><i class="fas fa-money-bill-transfer" aria-hidden="true"></i> Paid transactions</span>
+                <strong id="adminPaidPaymentCount">0</strong>
+                <small>Supplier-confirmed or provider-verified</small>
+              </article>
+            </div>
+            <div class="admin-overview-grid">
+              <section class="dashboard-card admin-chart-card" aria-labelledby="adminModerationTitle">
+                <div class="admin-card-heading">
+                  <div><h3 id="adminModerationTitle">Listing moderation</h3><p>Approved listings compared with work still in review.</p></div>
+                  <button class="admin-quiet-button" type="button" data-open-dashboard-view="listings">View listings <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></button>
+                </div>
+                <div class="admin-moderation-content">
+                  <div class="admin-moderation-ring" id="adminModerationRing" role="img" aria-label="Listing moderation breakdown">
+                    <div><strong id="adminModerationTotal">0</strong><span>listings</span></div>
+                  </div>
+                  <div class="admin-legend">
+                    <div><span class="admin-legend-dot is-approved"></span><span>Approved</span><strong id="adminApprovedLegend">0</strong></div>
+                    <div><span class="admin-legend-dot is-pending"></span><span>Pending review</span><strong id="adminPendingLegend">0</strong></div>
+                    <div><span class="admin-legend-dot is-rejected"></span><span>Deal requests</span><strong id="adminDealLegend">0</strong></div>
+                  </div>
+                </div>
+              </section>
+              <section class="dashboard-card admin-queue-health" aria-labelledby="adminQueueHealthTitle">
+                <div class="admin-card-heading">
+                  <div><h3 id="adminQueueHealthTitle">Review queues</h3><p>Items waiting for admin review.</p></div>
+                  <i class="fas fa-chart-simple" aria-hidden="true"></i>
+                </div>
+                <button class="admin-queue-bar" type="button" data-open-dashboard-view="approvals">
+                  <span><span>Product listings</span><strong id="adminPendingBarCount">0</strong></span>
+                  <span class="admin-bar-track"><span id="adminPendingBar"></span></span>
+                </button>
+                <button class="admin-queue-bar" type="button" data-open-dashboard-view="deal-requests">
+                  <span><span>Group deals</span><strong id="adminDealBarCount">0</strong></span>
+                  <span class="admin-bar-track"><span id="adminDealBar"></span></span>
+                </button>
+                <button class="admin-queue-bar" type="button" data-open-dashboard-view="suppliers">
+                  <span><span>Supplier applications</span><strong id="adminSupplierBarCount">0</strong></span>
+                  <span class="admin-bar-track"><span id="adminSupplierBar"></span></span>
+                </button>
+              </section>
+            </div>
+            <section class="dashboard-card admin-activity-card" aria-labelledby="adminActivityTitle">
+              <div class="admin-card-heading admin-activity-heading">
+                <div><h3 id="adminActivityTitle">Recent review activity</h3><p>Newest listings, deal requests, and supplier applications.</p></div>
+                <div class="admin-activity-controls">
+                  <label class="admin-queue-search"><i class="fas fa-search" aria-hidden="true"></i><input id="adminQueueSearch" type="search" placeholder="Search queue" aria-label="Search review queue"></label>
+                  <select id="adminQueueFilter" aria-label="Filter review queue">
+                    <option value="all">All activity</option>
+                    <option value="listing">Listings</option>
+                    <option value="deal">Group deals</option>
+                    <option value="supplier">Suppliers</option>
+                  </select>
+                </div>
+              </div>
+              <div id="adminOverviewQueue" class="admin-overview-queue"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="wholesale-revenue" hidden>
+            <section class="dashboard-card admin-business-panel">
+              <div class="admin-page-heading">
+                <div><span class="eyebrow">WHOLESALE PERFORMANCE</span><h3>Revenue metrics</h3><p>Orders marked paid by suppliers or verified by the legacy payment provider. TradeCircle does not process or hold supplier payments.</p></div>
+              </div>
+              <div class="dashboard-stats admin-business-stats">
+                <article class="dashboard-stat"><span>Lifetime paid revenue</span><strong id="adminLifetimeRevenue">KES 0</strong><small>Recorded successful payments</small></article>
+                <article class="dashboard-stat"><span>Revenue · last 30 days</span><strong id="adminRevenue30d">KES 0</strong><small id="adminRevenueChange">Compared with the prior 30 days</small></article>
+                <article class="dashboard-stat"><span>Paid transactions</span><strong id="adminPaidTransactionCount">0</strong><small>Successful payment records</small></article>
+                <article class="dashboard-stat"><span>Average transaction</span><strong id="adminAverageTransaction">KES 0</strong><small>Average paid payment amount</small></article>
+              </div>
+              <div class="admin-business-card">
+                <div class="admin-card-heading"><div><h3>Monthly paid revenue</h3><p>Six-month trend based on confirmed payment records.</p></div></div>
+                <div id="adminRevenueChart" class="admin-metric-bars" role="img" aria-label="Monthly paid revenue"></div>
+              </div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="supply-chain" hidden>
+            <section class="dashboard-card admin-business-panel">
+              <div class="admin-page-heading">
+                <div><span class="eyebrow">SUPPLY CHAIN &amp; BULK STOCK</span><h3>Inventory forecast</h3><p>Approved listings, available units, and estimated stock coverage using paid demand over the last 30 days.</p></div>
+              </div>
+              <div class="dashboard-stats admin-business-stats">
+                <article class="dashboard-stat"><span>Approved SKUs</span><strong id="adminInventorySkuCount">0</strong><small>Published wholesale products</small></article>
+                <article class="dashboard-stat"><span>In-stock SKUs</span><strong id="adminInventoryInStock">0</strong><small>Approved products with stock</small></article>
+                <article class="dashboard-stat"><span>Below minimum order</span><strong id="adminInventoryBelowMinimum">0</strong><small>Stock below one buyer MOQ</small></article>
+                <article class="dashboard-stat"><span>Out of stock</span><strong id="adminInventoryOutOfStock">0</strong><small>Approved listings with no units</small></article>
+              </div>
+              <div class="admin-business-card">
+                <div class="admin-card-heading"><div><h3>Replenishment watchlist</h3><p>Products with the lowest estimated days of stock are listed first. Estimates assume recent demand continues.</p></div></div>
+                <div class="admin-table-scroll">
+                  <table class="admin-forecast-table">
+                    <thead><tr><th>Product / supplier</th><th>Stock</th><th>30-day demand</th><th>Estimated coverage</th><th>Bulk status</th></tr></thead>
+                    <tbody id="adminInventoryForecast"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="client-funnel" hidden>
+            <section class="dashboard-card admin-business-panel">
+              <div class="admin-page-heading">
+                <div><span class="eyebrow">CLIENT ACQUISITION</span><h3>Buyer funnel analytics</h3><p>Account-to-order conversion based on registered buyer accounts and recorded marketplace transactions.</p></div>
+              </div>
+              <div class="dashboard-stats admin-business-stats">
+                <article class="dashboard-stat"><span>Buyer accounts</span><strong id="adminFunnelBuyers">0</strong><small>Active buyer profiles</small></article>
+                <article class="dashboard-stat"><span>New buyers · 30 days</span><strong id="adminNewBuyers30d">0</strong><small>Recently registered accounts</small></article>
+                <article class="dashboard-stat"><span>Placed an order</span><strong id="adminFunnelOrdered">0</strong><small id="adminFunnelOrderRate">0% of buyer accounts</small></article>
+                <article class="dashboard-stat"><span>Completed a payment</span><strong id="adminFunnelPaid">0</strong><small id="adminFunnelPaidRate">0% of buyer accounts</small></article>
+              </div>
+              <div class="admin-business-card">
+                <div class="admin-card-heading"><div><h3>Buyer conversion funnel</h3><p>Lifetime account counts at each recorded purchase step.</p></div></div>
+                <div id="adminClientFunnel" class="admin-funnel-steps"></div>
+                <p class="admin-metric-note">Website visits and anonymous browsing sessions are not tracked, so this funnel begins at account registration.</p>
+              </div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="system-integrations" hidden>
+            <section class="dashboard-card admin-business-panel">
+              <div class="admin-page-heading">
+                <div><span class="eyebrow">PLATFORM RELIABILITY</span><h3>System integrations</h3><p>Service availability and payment processing signals visible to TradeCircle.</p></div>
+                <span id="adminSystemCheckedAt" class="admin-system-checked">Checking status…</span>
+              </div>
+              <div class="admin-integration-grid">
+                <article class="admin-integration-card">
+                  <span class="admin-integration-icon"><i class="fas fa-server" aria-hidden="true"></i></span>
+                  <div><strong>TradeCircle API</strong><span id="adminApiStatus" class="admin-integration-status">Checking</span><p>Admin metrics API response</p></div>
+                </article>
+                <article class="admin-integration-card">
+                  <span class="admin-integration-icon"><i class="fas fa-database" aria-hidden="true"></i></span>
+                  <div><strong>PostgreSQL</strong><span id="adminDatabaseStatus" class="admin-integration-status">Checking</span><p>Database-backed dashboard queries</p></div>
+                </article>
+                <article class="admin-integration-card">
+                  <span class="admin-integration-icon"><i class="fas fa-money-bill-transfer" aria-hidden="true"></i></span>
+                  <div><strong>Supplier payment records</strong><span id="adminSupplierPaymentsStatus" class="admin-integration-status">Checking</span><p id="adminSupplierPaymentsDetail">Supplier payment tracking</p></div>
+                </article>
+                <article class="admin-integration-card is-warning">
+                  <span class="admin-integration-icon"><i class="fas fa-plug" aria-hidden="true"></i></span>
+                  <div><strong>ERP connector</strong><span class="admin-integration-status">Not configured</span><p>No ERP adapter or sync history is connected to TradeCircle.</p></div>
+                </article>
+              </div>
+              <p class="admin-metric-note">Supplier payment status reflects buyer reports and supplier confirmations; it does not represent money processed or held by TradeCircle.</p>
+              <div class="admin-business-card admin-payment-health">
+                <div class="admin-card-heading"><div><h3>Supplier payment tracker</h3><p>Direct supplier payments reported by buyers and confirmed by suppliers.</p></div></div>
+                <div class="admin-payment-health-counts">
+                  <span>All <strong id="adminPaymentTotal">0</strong></span>
+                  <span>Confirmed <strong id="adminPaymentPaid">0</strong></span>
+                  <span>Awaiting supplier <strong id="adminPaymentPending">0</strong></span>
+                  <span>Awaiting buyer <strong id="adminPaymentUnpaid">0</strong></span>
+                  <span>Supplier orders <strong id="adminPaymentSupplier">0</strong></span>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="approvals" hidden>
+          <div class="dashboard-card">
+            <div class="dashboard-card-heading"><div><h3>Pending product approvals</h3>
+            <p class="dashboard-help">Approve listings to publish them in the buyer marketplace, or reject them.</p>
+            </div></div>
+            <div id="adminProducts" class="dashboard-list"></div>
+          </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="deal-requests" hidden>
+            <div class="dashboard-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h3>Supplier group-deal requests</h3>
+                  <p class="dashboard-help">Suppliers opt in by requesting a deal. Approving a request publishes it to the marketplace; rejection does not publish it.</p>
+                </div>
+              </div>
+              <div id="adminDealRequests" class="dashboard-list"></div>
+            </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="listings" hidden>
+            <div class="dashboard-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h3>Published product listings</h3>
+                  <p class="dashboard-help">Remove an inappropriate listing to hide it from the marketplace. The listing record is retained for moderation history.</p>
+                </div>
+              </div>
+              <div id="adminApprovedProducts" class="dashboard-list"></div>
+            </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="suppliers" hidden>
+            <div class="dashboard-card">
+              <div class="dashboard-card-heading">
+                <div>
+                  <h3>Supplier applications</h3>
+                  <p class="dashboard-help">Review business details and approve applications to grant selling access. Approved suppliers keep their buyer capabilities.</p>
+                </div>
+              </div>
+              <div id="adminSuppliers" class="dashboard-list"></div>
+            </div>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="accounts" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">CONNECTED PROFILES</span><h3>Buyer &amp; supplier accounts</h3><p>Search one account directory across the marketplace.</p></div></div>
+              <div class="admin-toolbar">
+                <label class="admin-queue-search"><i class="fas fa-search" aria-hidden="true"></i><input id="adminAccountSearch" type="search" placeholder="Name, business, or email" aria-label="Search accounts"></label>
+                <select id="adminAccountKind" aria-label="Filter account type"><option value="all">All accounts</option><option value="buyers">Buyers</option><option value="suppliers">Suppliers</option><option value="employees">Sales employees</option></select>
+              </div>
+              <div id="adminAccounts" class="admin-data-list"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="orders" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">TRANSACTION JOURNEY</span><h3>Orders across TradeCircle</h3><p>Follow each order from buyer checkout through supplier fulfillment.</p></div></div>
+              <div class="admin-toolbar">
+                <label class="admin-queue-search"><i class="fas fa-search" aria-hidden="true"></i><input id="adminOrderSearch" type="search" placeholder="Order, buyer, supplier, product" aria-label="Search orders"></label>
+                <select id="adminOrderStatus" aria-label="Filter order status"><option value="all">All order statuses</option><option>pending</option><option>confirmed</option><option>processing</option><option>shipped</option><option>delivered</option><option>cancelled</option></select>
+                <select id="adminOrderPayment" aria-label="Filter payment status"><option value="all">All payments</option><option>unpaid</option><option>pending</option><option>paid</option><option>failed</option></select>
+              </div>
+              <div id="adminOrders" class="admin-data-list"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="payments" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">PAYMENT MONITORING</span><h3>Supplier payments</h3><p>Review buyer payment reports and supplier confirmations. TradeCircle does not process or hold these direct payments. Legacy M-Pesa transaction records remain visible.</p></div></div>
+              <div class="admin-toolbar"><select id="adminPaymentStatus" aria-label="Filter payment status"><option value="all">All payment statuses</option><option>unpaid</option><option>reported</option><option>pending</option><option>paid</option><option>failed</option></select></div>
+              <div id="adminPayments" class="admin-data-list"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="group-buying" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">GROUP-BUY MONITORING</span><h3>Deals &amp; participation</h3><p>Monitor progress, supplier, participants, and remaining time without changing contributions.</p></div></div>
+              <div class="admin-toolbar"><select id="adminDealStatus" aria-label="Filter group deals"><option value="all">All deals</option><option>active</option><option>completed</option><option>expired</option><option>cancelled</option></select></div>
+              <div id="adminGroupDeals" class="admin-data-list"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="activity" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">LIVE PLATFORM SIGNALS</span><h3>Activity feed</h3><p>Recent account, listing, deal, order, and payment records. Updates every 30 seconds while this console is open.</p></div></div>
+              <div id="adminActivityFeed" class="admin-data-list"></div>
+            </section>
+          </div>
+          <div class="dashboard-panel" data-dashboard-panel="preview" hidden>
+            <section class="dashboard-card">
+              <div class="admin-page-heading"><div><span class="eyebrow">SAFE PREVIEW</span><h3>Marketplace experience</h3><p>Inspect public buyer and supplier views without signing in as, or acting on behalf of, another account.</p></div></div>
+              <div class="admin-preview-controls" role="group" aria-label="Preview mode">
+                <button class="admin-preview-mode is-active" type="button" data-admin-preview-mode="buyer" aria-pressed="true"><i class="fas fa-bag-shopping" aria-hidden="true"></i>Buyer view</button>
+                <button class="admin-preview-mode" type="button" data-admin-preview-mode="supplier" aria-pressed="false"><i class="fas fa-store" aria-hidden="true"></i>Supplier view</button>
+                <select id="adminPreviewSupplier" aria-label="Choose supplier" hidden></select>
+              </div>
+              <div id="adminPreviewContent" class="admin-preview-content"></div>
+            </section>
+          </div>
+        </div>
+        <div id="adminDetailOverlay" class="admin-detail-overlay" hidden>
+          <button class="admin-detail-backdrop" type="button" data-close-admin-detail aria-label="Close profile"></button>
+          <aside class="admin-detail-drawer" role="dialog" aria-modal="true" aria-labelledby="adminDetailTitle">
+            <button class="admin-detail-close" type="button" data-close-admin-detail aria-label="Close"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+            <div id="adminDetailContent"></div>
+          </aside>
+        </div>
+        <div id="accountSettingsPanel" class="dashboard-panel" hidden>
+          <div class="dashboard-card">
+            <h3>Delete your account permanently</h3>
+            <p class="account-deletion-description">Your login and personal profile details will be erased, and all active sessions will be signed out. Necessary order and payment history will remain with your identity anonymized. Supplier listings and active deals will be withdrawn; reviews, messages, wishlists, and pending deal requests will be removed.</p>
+            <form id="deleteAccountForm" class="dashboard-form">
+              <label>Current password
+                <input name="current_password" type="password" autocomplete="current-password" required>
+              </label>
+              <label>Type DELETE to confirm
+                <input name="confirmation" type="text" autocomplete="off" required>
+              </label>
+              <p id="deleteAccountError" class="dashboard-error dashboard-form-wide" role="alert" hidden></p>
+              <div class="dashboard-form-wide">
+                <button id="deleteAccountButton" class="button reject-button" type="submit">
+                  Permanently delete my account
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="landing-process">
+      <div class="container is-fluid px-5">
+        <div class="landing-band-heading">
+          <span class="eyebrow">SIMPLE BY DESIGN</span>
+          <h2>How It Works</h2>
+          <p>Getting started is simple</p>
+        </div>
+        <div class="landing-process-steps">
+          <article class="landing-process-step">
+            <span class="landing-step-icon"><i class="fas fa-cart-shopping" aria-hidden="true"></i></span>
+            <h3>1. Register</h3>
+            <p>Create your business account.</p>
+          </article>
+          <span class="landing-step-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+          <article class="landing-process-step">
+            <span class="landing-step-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></span>
+            <h3>2. Get verified</h3>
+            <p>Build trust through business review.</p>
+          </article>
+          <span class="landing-step-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+          <article class="landing-process-step">
+            <span class="landing-step-icon"><i class="fas fa-handshake" aria-hidden="true"></i></span>
+            <h3>3. Trade</h3>
+            <p>Buy or sell at wholesale prices.</p>
+          </article>
+          <span class="landing-step-arrow" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+          <article class="landing-process-step">
+            <span class="landing-step-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></span>
+            <h3>4. Grow</h3>
+            <p>Expand your business with better deals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-tradecircle" class="landing-benefits">
+      <div class="container is-fluid px-5">
+        <div class="landing-benefits-heading">
+          <span class="eyebrow">BUILT FOR BUSINESS</span>
+          <h2>Why TradeCircle?</h2>
+          <p>A smarter, more connected way to trade.</p>
+          <a class="button primary-button" href="#how-it-works">Explore benefits <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></a>
+        </div>
+        <div class="landing-benefit-item"><i class="fas fa-tag" aria-hidden="true"></i><strong>Wholesale<br>prices</strong></div>
+        <div class="landing-benefit-item"><i class="fas fa-shield-halved" aria-hidden="true"></i><strong>Reviewed<br>suppliers</strong></div>
+        <div class="landing-benefit-item"><i class="fas fa-people-group" aria-hidden="true"></i><strong>Group<br>buying</strong></div>
+        <div class="landing-benefit-item"><i class="fas fa-headset" aria-hidden="true"></i><strong>Business<br>support</strong></div>
+      </div>
+    </section>
+
+    <section id="faqs" class="landing-faqs">
+      <div class="container is-fluid px-5">
+        <div class="landing-faq-heading">
+          <span class="eyebrow">GOOD TO KNOW</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="landing-faq-list">
+          <details><summary>Who can use TradeCircle?</summary><p>Businesses can create an account to browse wholesale products, place orders, and join eligible group deals.</p></details>
+          <details><summary>Can a supplier also buy?</summary><p>Yes. Approved suppliers can use buying and selling modes from one account.</p></details>
+          <details><summary>How do group deals work?</summary><p>Buyers contribute quantities toward a shared target. Each deal shows its progress, price, and closing time.</p></details>
+          <details><summary>How does supplier verification work?</summary><p>Businesses apply through their account. An administrator reviews the application before selling tools are enabled.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supplier call to action -->
+    <section id="suppliers" class="supplier-section">
+      <div class="container is-fluid px-5">
+        <div class="supplier-banner">
+          <div>
+            <span class="eyebrow">FOR WHOLESALE SUPPLIERS</span>
+            <h2>Reach more business buyers.</h2>
+            <p>Showcase your products, connect with retailers, and explore
+               group purchasing opportunities.</p>
+          </div>
+          <a id="supplierButton" class="button supplier-button" href="auth.html?mode=register">
+            Become a supplier <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="landing-contact">
+      <div class="container is-fluid px-5">
+        <div><span class="eyebrow">LET'S GROW TOGETHER</span><h2>Ready to trade smarter?</h2><p>Join TradeCircle and explore wholesale buying built around your business.</p></div>
+        <a class="button primary-button" href="auth.html?mode=register" data-open-registration>Get started <i class="fas fa-arrow-right ml-2" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="tc-footer">
+    <div class="container is-fluid px-5">
+      <div class="columns is-multiline">
+        <div class="column is-5">
+          <a class="brand footer-brand" href="#home">
+            <img class="tradecircle-logo-image" src="tradecircle-logo.png" alt="">
+            <span class="tradecircle-wordmark"><span>TradeCircle</span><small>Wholesale, United.</small></span>
+          </a>
+          <p class="footer-copy">
+            Connecting businesses through smarter wholesale purchasing
+            and collective buying power.
+          </p>
+        </div>
+        <div class="column is-3">
+          <strong>Explore</strong>
+          <a href="#why-tradecircle">Why TradeCircle</a>
+          <a href="#faqs">FAQs</a>
+        </div>
+        <div class="column is-4">
+          <strong>TradeCircle</strong>
+          <a href="#how-it-works">How it works</a>
+          <a href="auth.html?mode=register" id="footerSupplierLink">For suppliers</a>
+          <a href="terms.html">Terms and Conditions</a>
+          <span>Built for business growth.</span>
+        </div>
+        </div>
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> TradeCircle</span>
+        <span>Wholesale, United.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div id="reviewDialogOverlay" class="overlay auth-overlay" hidden>
+    <div class="overlay-backdrop" data-close-reviews></div>
+    <section class="review-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="reviewDialogTitle">
+      <div class="review-dialog-heading">
+        <div>
+          <span class="eyebrow">BUYER EXPERIENCES</span>
+          <h2 id="reviewDialogTitle">Product reviews</h2>
+        </div>
+        <button class="icon-button" type="button" data-close-reviews
+                aria-label="Close reviews">
+          <i class="fas fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p id="reviewSummary" class="review-summary"></p>
+      <div id="reviewList" class="review-list"></div>
+      <div id="reviewFormContainer" class="review-form-container"></div>
+    </section>
+  </div>
+
+  <div id="dealCheckoutOverlay" class="overlay auth-overlay" hidden>
+    <div class="overlay-backdrop" data-close-deal-checkout></div>
+    <section class="auth-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="dealCheckoutTitle">
+      <button class="icon-button auth-close" type="button" data-close-deal-checkout
+              aria-label="Close group-deal checkout">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+      <span class="eyebrow">GROUP-DEAL CHECKOUT</span>
+      <h2 id="dealCheckoutTitle">Join group deal</h2>
+      <p id="dealCheckoutSummary"></p>
+      <p class="dashboard-help">Your order is reserved when you join. Pay the supplier directly using the instructions in your order history.</p>
+      <form id="dealCheckoutForm">
+        <p id="dealCheckoutError" class="auth-error" role="alert" hidden></p>
+        <button id="dealCheckoutSubmit" class="button primary-button is-fullwidth"
+                type="submit">Join group deal</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Cart drawer -->
+  <div id="cartOverlay" class="overlay" hidden>
+    <div class="overlay-backdrop" data-close-cart></div>
+    <aside class="cart-drawer" role="dialog" aria-modal="true"
+           aria-labelledby="cartTitle">
+      <div class="drawer-header">
+        <div>
+          <span class="eyebrow">YOUR BUSINESS ORDER</span>
+          <h2 id="cartTitle">Shopping cart</h2>
+        </div>
+        <button class="icon-button" data-close-cart aria-label="Close cart">
+          <i class="fas fa-xmark"></i>
+        </button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-summary">
+        <p>Estimated subtotal <strong id="cartSubtotal">KES 0</strong></p>
+        <small>Shipping, applicable taxes, and final wholesale terms
+          will be confirmed before an order is placed.</small>
+        <button id="checkoutButton" class="button primary-button is-fullwidth">
+          Place order
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <div id="authOverlay" class="overlay auth-overlay" hidden>
+    <div class="overlay-backdrop" data-close-auth></div>
+    <section class="auth-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="authTitle">
+      <button class="icon-button auth-close" data-close-auth aria-label="Close">
+        <i class="fas fa-xmark"></i>
+      </button>
+      <span class="eyebrow">TRADECIRCLE ACCOUNT</span>
+      <h2 id="authTitle">Sign in</h2>
+      <p id="authDescription">Sign in to place orders and join group deals.</p>
+      <form id="authForm">
+        <label class="auth-field" id="authNameField" hidden>
+          Primary admin full name
+          <input name="name" type="text" minlength="2" maxlength="120"
+                 autocomplete="name">
+        </label>
+        <label class="auth-field">
+          Work email address
+          <input name="email" type="email" maxlength="255"
+                 autocomplete="email" required>
+        </label>
+        <label class="auth-field" id="authPhoneField" hidden>
+          Critical business number
+          <input name="phone" type="tel" maxlength="20" autocomplete="tel"
+                 inputmode="tel" placeholder="0712 345 678">
+        </label>
+        <div id="businessRegistrationFields" class="business-registration-grid" hidden>
+          <label class="auth-field">Legal business name
+            <input name="legal_business_name" type="text" minlength="2" maxlength="180" autocomplete="organization">
+          </label>
+          <label class="auth-field">Trading name
+            <input name="business_name" type="text" minlength="2" maxlength="180" autocomplete="organization">
+          </label>
+          <label class="auth-field">Business registration number
+            <input name="business_registration_number" type="text" minlength="2" maxlength="80" autocomplete="off">
+          </label>
+          <label class="auth-field">Business structure
+            <select name="business_structure">
+              <option value="">Select structure</option>
+              <option value="sole_proprietor">Sole proprietor</option>
+              <option value="partnership">Partnership</option>
+              <option value="limited_company">Limited company</option>
+              <option value="cooperative">Cooperative</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="auth-field">Company website URL (optional)
+            <input name="company_website" type="url" maxlength="500" autocomplete="url" placeholder="https://example.com">
+          </label>
+          <label class="auth-field">Registered office address
+            <input name="registered_office_address" type="text" minlength="5" maxlength="500" autocomplete="street-address">
+          </label>
+          <label class="auth-field business-field-wide">Primary or shipping address
+            <input name="shipping_address" type="text" minlength="5" maxlength="500" autocomplete="shipping street-address">
+          </label>
+          <label class="auth-field">Tax PIN number
+            <input name="tax_pin_number" type="text" minlength="5" maxlength="40" autocomplete="off">
+          </label>
+          <label class="auth-field">Authorized signatory ID or passport number
+            <input name="signatory_id_number" type="text" minlength="5" maxlength="60" autocomplete="off">
+          </label>
+          <label class="auth-field">Industry business category
+            <select name="industry_category">
+              <option value="">Select category</option>
+              <option value="groceries">Groceries and food</option>
+              <option value="agriculture">Agriculture</option>
+              <option value="electronics">Electronics</option>
+              <option value="home_cleaning">Home and cleaning</option>
+              <option value="packaging">Packaging</option>
+              <option value="fashion">Fashion and apparel</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="auth-field">Estimated monthly purchase volume
+            <select name="monthly_purchase_volume">
+              <option value="">Select range</option>
+              <option value="under_50000">Under KSh 50,000</option>
+              <option value="50000_250000">KSh 50,000–250,000</option>
+              <option value="250001_1000000">KSh 250,001–1,000,000</option>
+              <option value="over_1000000">Over KSh 1,000,000</option>
+            </select>
+          </label>
+          <label class="auth-field">Your preferred way to pay suppliers
+            <select name="preferred_payment_method">
+              <option value="">Select method</option>
+              <option value="mpesa">M-Pesa</option>
+              <option value="bank_transfer">Bank transfer</option>
+              <option value="card">Card</option>
+              <option value="cash">Cash / in person</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="auth-field business-field-wide business-checkbox-field">
+            <input name="vat_registered" type="checkbox" value="true">
+            <span>VAT registered</span>
+          </label>
+          <label class="auth-field business-field-wide business-checkbox-field">
+            <input name="trade_credit_requested" type="checkbox" value="true">
+            <span>Apply for a trade credit account (subject to review)</span>
+          </label>
+          <div class="business-documents business-field-wide">
+            <h3>Business documents</h3>
+            <p>Secure document uploads are unavailable until private file storage is configured. No documents will be sent to public storage.</p>
+            <label class="auth-field">Certificate of incorporation
+              <input type="file" name="incorporation_certificate" accept="application/pdf,image/*" disabled aria-disabled="true">
+            </label>
+            <label class="auth-field">Tax PIN certificate
+              <input type="file" name="tax_pin_certificate" accept="application/pdf,image/*" disabled aria-disabled="true">
+            </label>
+            <label class="auth-field">Authorized signatory ID or passport
+              <input type="file" name="signatory_document" accept="application/pdf,image/*" disabled aria-disabled="true">
+            </label>
+          </div>
+        </div>
+        <label class="auth-terms" id="authTermsField" hidden>
+          <input name="terms_accepted" type="checkbox" value="true" required>
+          <span>I have read and agree to the
+            <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>.</span>
+        </label>
+        <label class="auth-field">
+          Password
+          <span class="password-entry">
+            <input name="password" type="password" minlength="10" maxlength="128"
+                   autocomplete="current-password" required>
+            <button id="togglePasswordVisibility" class="password-visibility-button" type="button" aria-label="Show password" aria-pressed="false" title="Show password">
+              <i class="fas fa-eye" aria-hidden="true"></i>
+            </button>
+          </span>
+        </label>
+        <p id="authError" class="auth-error" role="alert" hidden></p>
+        <button id="authSubmit" class="button primary-button is-fullwidth"
+                type="submit">Sign in</button>
+        <div class="auth-provider-actions">
+          <button id="forgotPasswordButton" class="auth-provider-link" type="button">Forgot password?</button>
+          <button id="googleSignInButton" class="button google-signin-button" type="button" disabled title="Google sign-in requires OAuth configuration">
+            <i class="fab fa-google" aria-hidden="true"></i> Continue with Google
+          </button>
+          <p id="authIntegrationNotice" class="auth-integration-notice" role="status">Google sign-in and password-reset email are unavailable until their providers are configured.</p>
+        </div>
+      </form>
+      <p class="auth-switch">
+        <span id="authSwitchPrompt">New to TradeCircle?</span>
+        <button id="authSwitchButton" type="button">Create an account</button>
+      </p>
+    </section>
+  </div>
+
+  <div id="termsConsentOverlay" class="overlay auth-overlay" hidden>
+    <section class="auth-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="termsConsentTitle">
+      <span class="eyebrow">TERMS UPDATED</span>
+      <h2 id="termsConsentTitle">Please review our Terms and Conditions</h2>
+      <p>To continue using your account, read and accept the current terms.</p>
+      <p id="termsConsentError" class="auth-error" role="alert" hidden></p>
+      <form id="termsConsentForm">
+        <label class="auth-terms">
+          <input name="terms_accepted" type="checkbox" value="true" required>
+          <span>I have read and agree to the
+            <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>, version 2026-10-28.</span>
+        </label>
+        <button id="termsConsentSubmit" class="button primary-button is-fullwidth"
+                type="submit">Accept and continue</button>
+      </form>
+      <button id="termsConsentSignOut" class="terms-signout" type="button">Sign out instead</button>
+    </section>
+  </div>
+
+  <!-- Status dialog -->
+  <div id="noticeOverlay" class="overlay" hidden>
+    <div class="overlay-backdrop" data-close-notice></div>
+    <div class="notice-dialog" role="dialog" aria-modal="true"
+         aria-labelledby="noticeTitle">
+      <button class="icon-button notice-close" data-close-notice
+              aria-label="Close"><i class="fas fa-xmark"></i></button>
+      <span class="notice-icon"><i class="fas fa-building"></i></span>
+      <h2 id="noticeTitle">TradeCircle</h2>
+      <p id="noticeMessage"></p>
+      <button class="button primary-button is-fullwidth" data-close-notice>
+        Got it
+      </button>
+    </div>
+  </div>
+
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+
+  <script src="script.js?v=30"></script>
+</body>
+</html>

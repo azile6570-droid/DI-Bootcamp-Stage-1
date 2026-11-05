@@ -1,0 +1,25 @@
+{
+  "name": "tradecircle-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TradeCircle backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "migrate:sales-workspace": "node scripts/migrate-sales-workspace.js",
+    "migrate:supplier-payments": "node scripts/migrate-supplier-payments.js",
+    "seed-products": "node scripts/seed-products.js",
+    "make-admin": "node scripts/make-admin.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "bcryptjs": "^2.4.3",
+    "connect-pg-simple": "^10.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1"
+  }
+}

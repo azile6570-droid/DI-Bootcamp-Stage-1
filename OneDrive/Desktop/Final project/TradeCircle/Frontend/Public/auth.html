@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a TradeCircle account or sign in to your business account.">
+  <title>Get started | TradeCircle</title>
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=25">
+</head>
+
+<body class="auth-page">
+  <header class="auth-page-header">
+    <a class="brand" href="index.html" aria-label="TradeCircle home">
+      <img class="tradecircle-logo-image" src="tradecircle-logo.png" alt="">
+      <span class="tradecircle-wordmark"><span>TradeCircle</span><small>Wholesale, United.</small></span>
+    </a>
+    <a class="auth-home-link" href="index.html">
+      <i class="fas fa-arrow-left mr-2" aria-hidden="true"></i>Back to home
+    </a>
+  </header>
+
+  <main class="auth-page-main">
+    <section class="auth-dialog auth-page-card" aria-labelledby="authTitle">
+      <span class="eyebrow">TRADECIRCLE ACCOUNT</span>
+      <h1 id="authTitle">Create your account</h1>
+      <p id="authDescription">Create your business profile to get started with TradeCircle.</p>
+
+      <div class="auth-mode-switch" role="group" aria-label="Choose account action">
+        <button id="registerModeButton" class="is-active" type="button" aria-pressed="true">Sign up</button>
+        <button id="loginModeButton" type="button" aria-pressed="false">Log in</button>
+      </div>
+
+      <form id="authForm">
+        <label class="auth-field" id="authNameField">
+          Primary admin full name
+          <input name="name" type="text" minlength="2" maxlength="120"
+                 autocomplete="name" required>
+        </label>
+        <label class="auth-field" id="authEmailField">
+          Work email address
+          <input name="email" type="email" maxlength="255"
+                 autocomplete="email" required>
+        </label>
+        <label class="auth-field" id="authPhoneField">
+          Business phone number
+          <input name="phone" type="tel" maxlength="20" autocomplete="tel"
+                 inputmode="tel" placeholder="0712 345 678" required>
+        </label>
+
+        <div id="businessRegistrationFields" class="business-registration-grid">
+          <label class="auth-field">Legal business name
+            <input name="legal_business_name" type="text" minlength="2" maxlength="180" autocomplete="organization" required>
+          </label>
+          <label class="auth-field">Trading name
+            <input name="business_name" type="text" minlength="2" maxlength="180" autocomplete="organization" required>
+          </label>
+          <label class="auth-field">Business registration number
+            <input name="business_registration_number" type="text" minlength="2" maxlength="80" autocomplete="off" required>
+          </label>
+          <label class="auth-field">Business structure
+            <select name="business_structure" required>
+              <option value="">Select structure</option>
+              <option value="sole_proprietor">Sole proprietor</option>
+              <option value="partnership">Partnership</option>
+              <option value="limited_company">Limited company</option>
+              <option value="cooperative">Cooperative</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="auth-field">Company website URL (optional)
+            <input name="company_website" type="url" maxlength="500" autocomplete="url" placeholder="https://example.com">
+          </label>
+          <label class="auth-field">Registered office address
+            <input name="registered_office_address" type="text" minlength="5" maxlength="500" autocomplete="street-address" required>
+          </label>
+          <label class="auth-field business-field-wide">Primary or shipping address
+            <input name="shipping_address" type="text" minlength="5" maxlength="500" autocomplete="shipping street-address" required>
+          </label>
+          <label class="auth-field">Tax PIN number
+            <input name="tax_pin_number" type="text" minlength="5" maxlength="40" autocomplete="off" required>
+          </label>
+          <label class="auth-field">Authorized signatory ID or passport number
+            <input name="signatory_id_number" type="text" minlength="5" maxlength="60" autocomplete="off" required>
+          </label>
+          <label class="auth-field">Industry business category
+            <select name="industry_category" required>
+              <option value="">Select category</option>
+              <option value="groceries">Groceries and food</option>
+              <option value="agriculture">Agriculture</option>
+              <option value="electronics">Electronics</option>
+              <option value="home_cleaning">Home and cleaning</option>
+              <option value="packaging">Packaging</option>
+              <option value="fashion">Fashion and apparel</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="auth-field">Estimated monthly purchase volume
+            <select name="monthly_purchase_volume" required>
+              <option value="">Select range</option>
+              <option value="under_50000">Under KSh 50,000</option>
+              <option value="50000_250000">KSh 50,000–250,000</option>
+              <option value="250001_1000000">KSh 250,001–1,000,000</option>
+              <option value="over_1000000">Over KSh 1,000,000</option>
+            </select>
+          </label>
+          <label class="auth-field">Preferred payment method
+            <select name="preferred_payment_method" required>
+              <option value="">Select method</option>
+              <option value="mpesa">M-Pesa</option>
+              <option value="bank_transfer">Bank transfer</option>
+              <option value="card">Card</option>
+              <option value="other">Other</option>
+            </select>
+          </label>
+          <label class="auth-field business-checkbox-field">
+            <input name="vat_registered" type="checkbox" value="true">
+            <span>VAT registered</span>
+          </label>
+          <label class="auth-field business-checkbox-field">
+            <input name="trade_credit_requested" type="checkbox" value="true">
+            <span>Apply for a trade credit account (subject to review)</span>
+          </label>
+        </div>
+
+        <label class="auth-terms" id="authTermsField">
+          <input name="terms_accepted" type="checkbox" value="true" required>
+          <span>I have read and agree to the
+            <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>.</span>
+        </label>
+
+        <label class="auth-field">
+          Password
+          <span class="password-entry">
+            <input name="password" type="password" minlength="10" maxlength="128"
+                   autocomplete="new-password" required>
+            <button id="togglePasswordVisibility" class="password-visibility-button"
+                    type="button" aria-label="Show password" aria-pressed="false"
+                    title="Show password">
+              <i class="fas fa-eye" aria-hidden="true"></i>
+            </button>
+          </span>
+        </label>
+
+        <p id="authError" class="auth-error" role="alert" hidden></p>
+        <button id="authSubmit" class="button primary-button is-fullwidth"
+                type="submit">Create account</button>
+        <button id="forgotPasswordButton" class="auth-provider-link" type="button" hidden>
+          Forgot password?
+        </button>
+        <p id="authNotice" class="auth-integration-notice" role="status" hidden></p>
+      </form>
+
+      <p class="auth-switch">
+        <span id="authSwitchPrompt">Already have an account?</span>
+        <button id="authSwitchButton" type="button">Log in</button>
+      </p>
+    </section>
+  </main>
+
+  <script src="auth.js?v=1"></script>
+</body>
+</html>

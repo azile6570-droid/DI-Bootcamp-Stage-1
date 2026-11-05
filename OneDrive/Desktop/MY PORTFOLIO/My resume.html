@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lizz Kamau | Professional Resume</title>
+  <!-- Google Fonts & Font Awesome CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* 🎨 Baby Pink Aesthetic Design Tokens */
+    :root {
+      --bg-canvas: #fff0f3;       /* Softest Baby Pink Canvas */
+      --bg-sheet: #ffffff;
+      --sidebar-accent: #ffe5ec; /* Delicate Light Pink Sidebar */
+      --text-main: #590d22;       /* Deep Burgundy for crisp contrast */
+      --text-muted: #800f2f;
+      --neon-highlight: #ff4d6d; /* Soft Rose Accent */
+      --badge-bg: #ffccd5;       /* Light Pink Badge */
+      --badge-text: #a4133c;     /* Strong Rose Text */
+      --border-line: #ffccd5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: 'Inter', sans-serif;
+      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print / Utility Tool Belt Controls strip */
+    .utility-bar {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .btn-action {
+      background: var(--neon-highlight);
+      color: white;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 10px rgba(255, 77, 109, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background: #c9184a;
+      transform: translateY(-1px);
+    }
+
+    /* 📄 Standard A4 Layout Paper Engine Sheet Canvas */
+    .resume-canvas {
+      background: var(--bg-sheet);
+      width: 100%;
+      max-width: 900px;
+      min-height: 1100px;
+      box-shadow: 0 20px 40px rgba(255, 117, 143, 0.15), 0 1px 3px rgba(0, 0, 0, 0.02);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+      border: 2px solid var(--border-line);
+    }
+
+    @media (min-width: 768px) {
+      .resume-canvas {
+        grid-template-columns: 0.35fr 0.65fr;
+      }
+    }
+
+    /* 🗂️ LEFT SIDEBAR TRACK CONTAINER */
+    .sidebar-pane {
+      background-color: var(--sidebar-accent);
+      color: var(--text-main);
+      padding: 45px 35px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      border-right: 1px solid var(--border-line);
+    }
+
+    /* Headshot Avatar Image Styling */
+    .profile-avatar-block {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .avatar-frame {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 3px solid var(--neon-highlight);
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(255, 77, 109, 0.2);
+    }
+
+    .sidebar-section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--neon-highlight);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border-line);
+      padding-bottom: 8px;
+    }
+
+    .contact-list { display: flex; flex-direction: column; gap: 14px; list-style: none; }
+    .contact-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+    .contact-list li i { color: var(--neon-highlight); margin-top: 2px; width: 14px; text-align: center; }
+    .contact-list li a { color: var(--text-muted); text-decoration: none; word-break: break-all; font-weight: 500; }
+    .contact-list li a:hover { color: var(--neon-highlight); }
+
+    /* Skills Meter Rows block */
+    .skills-pane { display: flex; flex-direction: column; gap: 16px; }
+    .skill-row { display: flex; flex-direction: column; gap: 6px; }
+    .skill-labels { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; color: var(--text-main); }
+    .skill-track { width: 100%; height: 6px; background: rgba(255, 255, 255, 0.8); border-radius: 10px; overflow: hidden; border: 1px solid var(--border-line); }
+    .skill-fill { height: 100%; background: var(--neon-highlight); border-radius: 10px; }
+
+    .cert-list { list-style: none; display: flex; flex-direction: column; gap: 12px; font-size: 0.85rem; color: var(--text-muted); }
+    .cert-list li strong { color: var(--text-main); display: block; margin-bottom: 2px; }
+
+    /* 📄 RIGHT PRIMARY EXPERIENCES TRACK */
+    .main-pane {
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .header-block h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .header-block h1 span { color: var(--neon-highlight); }
+
+    .header-title-sub {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--neon-highlight);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .main-section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid var(--border-line);
+      padding-bottom: 8px;
+    }
+
+    .main-section-title i { color: var(--neon-highlight); font-size: 1rem; }
+
+    .profile-paragraph {
+      color: var(--text-main);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* Timeline Tracking components grid nodes */
+    .timeline-container { display: flex; flex-direction: column; gap: 22px; }
+    .timeline-item { display: flex; flex-direction: column; gap: 4px; }
+    .timeline-meta-row { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; }
+    .timeline-meta-row h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-main); }
+    .timeline-date { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; font-weight: 600; color: var(--badge-text); background: var(--badge-bg); padding: 2px 10px; border-radius: 12px; white-space: nowrap; }
+    
+    .timeline-tech-stack { font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; color: var(--text-muted); font-weight: 500; margin-bottom: 6px; }
+    
+    .timeline-item ul { margin: 0; padding-left: 18px; color: var(--text-main); font-size: 0.88rem; line-height: 1.5; }
+    .timeline-item ul li { margin-bottom: 6px; }
+
+    .edu-block h4 { font-size: 1.05rem; font-weight: 700; color: var(--text-main); margin-bottom: 2px; }
+    .edu-institution { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--neon-highlight); font-weight: 600; margin-bottom: 6px; }
+
+    /* 🖨️ PRINT OVERLAYS */
+    @media print {
+      body { background: white !important; padding: 0 !important; color: black !important; }
+      .utility-bar { display: none !important; }
+      .resume-canvas { box-shadow: none !important; border-radius: 0 !important; max-width: 100% !important; grid-template-columns: 0.32fr 0.68fr !important; border: none !important; }
+      .sidebar-pane { background-color: #fff0f3 !important; color: black !important; border-right: 1px solid #ffccd5 !important; padding: 30px 20px !important; }
+      .sidebar-section-title { color: #a4133c !important; border-bottom: 1px solid #ffccd5 !important; }
+      .contact-list li, .contact-list li a, .cert-list { color: #590d22 !important; }
+      .contact-list li i { color: #ff4d6d !important; }
+      .skill-labels, .cert-list li strong { color: black !important; }
+      .skill-track { background: #ffffff !important; }
+      .skill-fill { background: #ff4d6d !important; }
+      .avatar-frame { border-color: #ff4d6d !important; }
+      .main-pane { padding: 30px !important; }
+      .timeline-date { background: #ffccd5 !important; color: #a4133c !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- UTILITY CONTAINER ACTION PANEL STRIP -->
+  <div class="utility-bar">
+    <button class="btn-action" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Export Standard PDF</button>
+  </div>
+
+  <!-- MAIN A4 DOCUMENT CONTAINER BOUNDS -->
+  <div class="resume-canvas">
+    
+    <!-- 🗂️ SIDEBAR COMPONENT PANEL -->
+    <aside class="sidebar-pane">
+      
+      <!-- Headshot Photo Block -->
+      <div class="profile-avatar-block">
+        <img src="https://mmg.whatsapp.net/v/t62.7118-24/798245896_1735238274466187_3098593649577358843_n.enc?ccb=11-4&oh=01_Q5Aa5gFswdSkVdP7CeSZw_G0i5LsnqzAdPhWCtZsGCOd4asn8Q&oe=6AC48893&_nc_sid=5e03e0" alt="Lizz Kamau Profile Photo" class="avatar-frame">
+      </div>
+
+      <!-- CONTACT METADATA CONNECTIONS -->
+      <div>
+        <h2 class="sidebar-section-title">Contact Matrix</h2>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-location-dot"></i><span>Nairobi, Kenya</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>0759353001</span></li>
+          <li><i class="fa-solid fa-envelope"></i><a href="mailto:azile6570@gmail.com">azile6570@gmail.com</a></li>
+          <li><i class="fa-brands fa-github"></i><a href="https://github.com/azile6570" target="_blank">github.com/azile6570</a></li>
+          <li><i class="fa-brands fa-linkedin"></i><a href="https://linkedin.com/in/lizz-kamau" target="_blank">linkedin.com/in/lizz-kamau</a></li>
+        </ul>
+      </div>
+
+      <!-- TECHNICAL SKILL PROPORTIONS METRIC METER BAR TRACKS -->
+      <div>
+        <h2 class="sidebar-section-title">Expertise Core</h2>
+        <div class="skills-pane">
+          
+          <div class="skill-row">
+            <div class="skill-labels"><span>JavaScript</span><span>90%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-labels"><span>HTML5 / CSS Grid</span><span>95%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width: 95%;"></div></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-labels"><span>Python Modules</span><span>90%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-labels"><span>Git / Version Control</span><span>85%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width: 85%;"></div></div>
+          </div>
+
+          <div class="skill-row">
+            <div class="skill-labels"><span>UI State Management</span><span>80%</span></div>
+            <div class="skill-track"><div class="skill-fill" style="width: 80%;"></div></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CREDENTIALS & ACADEMICS -->
+      <div>
+        <h2 class="sidebar-section-title">Certifications</h2>
+        <ul class="cert-list">
+          <li>
+            <strong>Software Engineering Certificate</strong>
+            Developers Institute (2026)
+          </li>
+          <li>
+            <strong>Responsive Web Design</strong>
+            freeCodeCamp (2025)
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- 📄 RIGHT PRIMARY EXPERIENCES TRACK -->
+    <main class="main-pane">
+      
+      <!-- HEADER BLOCK -->
+      <header class="header-block">
+        <h1>Lizz <span>Kamau</span></h1>
+        <div class="header-title-sub">Software Engineering Student</div>
+      </header>
+
+      <!-- EXECUTIVE SUMMARY -->
+      <section>
+        <h2 class="main-section-title"><i class="fa-solid fa-compass"></i> Professional Profile</h2>
+        <p class="profile-paragraph">
+          Goal-oriented Software Engineering student based in Nairobi, Kenya with a strong foundation in modern web development architectures. Specializes in building responsive frontend applications utilizing vanilla JavaScript (ES6+), semantic HTML5, and CSS Grid/Flexbox layouts. Highly adept in dynamic DOM tree manipulation, state tracking algorithms, and web sound integrations. Passionate about software craftsmanship, clean code practices, and applying technical skills to high-impact developer internship roles.
+        </p>
+      </section>
+
+      <!-- KEY PROJECTS SHOWCASE -->
+      <section>
+        <h2 class="main-section-title"><i class="fa-solid fa-code"></i> Highlighted Projects</h2>
+        <div class="timeline-container">
+          
+          <div class="timeline-item">
+            <div class="timeline-meta-row">
+              <h3>Coloring Squares Canvas Application</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <div class="timeline-tech-stack">Tech: HTML5, CSS (Grid), JavaScript</div>
+            <ul>
+              <li>Engineered a dynamic 16x16 pixel drawing grid layout with custom palette mechanics utilizing pure CSS Grid.</li>
+              <li>Implemented click-and-drag mouse state tracking through integrated event listeners (<kbd>mousedown</kbd>, <kbd>mouseover</kbd>, <kbd>mouseup</kbd>).</li>
+              <li>Built real-time color swatches, active swatch selection highlighting, and eraser functionality without external libraries.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta-row">
+              <h3>Interactive Virtual Drumset App</h3>
+              <span class="timeline-date">2026</span>
+            </div>
+            <div class="timeline-tech-stack">Tech: HTML5, CSS, JavaScript, Web Audio API</div>
+            <ul>
+              <li>Developed a low-latency web audio synth mapping keyboard key bindings and click events directly to audio asset playback.</li>
+              <li>Handled asynchronous DOM keypress animations triggered via keycode lookup tables and CSS transition end listeners.</li>
+              <li>Structured clean visual user feedback loops for key presses across all major desktop browser viewports.</li>
+            </ul>
+          </div>
+
+         
+        </div>
+      </section>
+
+      <!-- EDUCATION SECTION -->
+      <section>
+        <h2 class="main-section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+        <div class="edu-block">
+          <h4>Certificate in Software Engineering</h4>
+          <div class="edu-institution">Developers Institute — Nairobi, Kenya (Expected 2026)</div>
+          <p class="profile-paragraph">
+            <strong>Core Modules:</strong> Object-Oriented JavaScript,Python Modules, Data Structures & Algorithms, Frontend UI Design, Version Control with Git/GitHub.
+          </p>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+</body>
+</html>
