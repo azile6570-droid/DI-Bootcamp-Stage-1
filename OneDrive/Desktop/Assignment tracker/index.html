@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StudyFlow | Assignment Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" href="#">
+            <span class="brand-icon">S</span> StudyFlow
+        </a>
+        <span id="accountLabel" class="muted">Assignment Portal</span>
+        <button id="logoutBtn" class="btn btn-outline hidden">Sign out</button>
+    </header>
+
+    <main class="container">
+        <div id="notice" class="notice" role="status" aria-live="polite"></div>
+
+        <!-- Authentication -->
+        <section id="authView" class="auth-layout">
+            <div class="auth-intro">
+                <span class="eyebrow">YOUR ACADEMIC WORKSPACE</span>
+                <h1>Learn. Submit.<br><span>Achieve more.</span></h1>
+                <p>One place to manage coursework, submit your work, and follow your academic progress.</p>
+                <div class="feature-line">✓ &nbsp; Stay organized</div>
+                <div class="feature-line">✓ &nbsp; Meet your deadlines</div>
+                <div class="feature-line">✓ &nbsp; Receive assignment feedback</div>
+            </div>
+
+            <div class="panel auth-panel">
+                <div class="tabs">
+                    <button id="loginTab" class="tab active" type="button">Sign in</button>
+                    <button id="registerTab" class="tab" type="button">Create account</button>
+                </div>
+
+                <form id="loginForm">
+                    <h2>Welcome back</h2>
+                    <p class="muted">Sign in to access your workspace.</p>
+
+                    <label for="loginEmail">Email address</label>
+                    <input id="loginEmail" name="email" type="email" autocomplete="email" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input id="loginPassword" name="password" type="password"
+                           autocomplete="current-password" required>
+
+                    <button class="btn btn-primary full" type="submit">Sign in</button>
+                </form>
+
+                <form id="registerForm" class="hidden">
+                    <h2>Create your account</h2>
+                    <p class="muted">Join StudyFlow to manage your assignments.</p>
+
+                    <label for="registerName">Full name</label>
+                    <input id="registerName" name="full_name" maxlength="120"
+                           autocomplete="name" required>
+
+                    <label for="registerEmail">Email address</label>
+                    <input id="registerEmail" name="email" type="email" maxlength="255"
+                           autocomplete="email" required>
+
+                    <label for="registerPassword">Password</label>
+                    <input id="registerPassword" name="password" type="password" minlength="8"
+                           maxlength="72" autocomplete="new-password" required>
+                    <small>Use at least 8 characters.</small>
+
+                    <button class="btn btn-primary full" type="submit">Create account</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Shared dashboard heading -->
+        <section id="dashboardView" class="hidden">
+            <div class="page-heading">
+                <div>
+                    <span class="eyebrow" id="roleLabel">YOUR STUDY SPACE</span>
+                    <h1 id="welcomeTitle">Your assignments</h1>
+                    <p class="muted" id="welcomeText">Stay organized and keep moving forward.</p>
+                </div>
+                <div class="notification-controls">
+                    <button id="enableReminders" class="btn btn-outline" type="button">Enable notifications</button>
+                    <small id="notificationStatus" class="muted">Get assignment deadline alerts in this browser.</small>
+                </div>
+            </div>
+
+            <div id="stats" class="stats-grid"></div>
+
+            <!-- Student workspace -->
+            <section id="studentView" class="hidden assignment-workspace">
+                <div class="workspace-cover">
+                    <span>A CALMER WAY TO KEEP UP</span>
+                    <strong>One thing at a time.<br>You’ve got this.</strong>
+                </div>
+                <div class="database-heading">
+                    <div>
+                        <span class="eyebrow">YOUR TO-DO LIST</span>
+                        <h2>Your assignments</h2>
+                        <p class="muted">A little progress adds up. Start wherever you are.</p>
+                    </div>
+                    <button id="refreshStudent" class="btn btn-outline" type="button" aria-label="Refresh assignments">Refresh</button>
+                </div>
+                <div class="database-toolbar">
+                    <div class="view-tabs" role="tablist" aria-label="Assignment views">
+                        <button class="view-tab active" type="button" role="tab" aria-selected="true" data-view="table">▦ <span>Table</span></button>
+                        <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="calendar">▦ <span>Calendar</span></button>
+                        <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="board">▤ <span>Board</span></button>
+                        <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="chart">◔ <span>Chart</span></button>
+                    </div>
+                    <details class="add-assignment">
+                        <summary class="btn btn-primary">＋ Add an assignment</summary>
+                        <form id="createStudentAssignmentForm" class="panel add-assignment-form">
+                            <h3>Add to your list</h3>
+                            <div class="form-grid">
+                                <div>
+                                    <label for="studentAssignmentTitle">What do you need to do?</label>
+                                    <input id="studentAssignmentTitle" name="title" maxlength="180" placeholder="e.g. Finish biology notes" required>
+                                </div>
+                                <div>
+                                    <label for="studentAssignmentSubject">Which class?</label>
+                                    <input id="studentAssignmentSubject" name="subject" maxlength="120" placeholder="e.g. Biology" required>
+                                </div>
+                                <div>
+                                    <label for="studentAssignmentDue">Due date</label>
+                                    <input id="studentAssignmentDue" name="dueDate" type="date" required>
+                                </div>
+                                <div>
+                                    <label for="studentAssignmentPriority">Priority</label>
+                                    <select id="studentAssignmentPriority" name="priority">
+                                        <option>Medium</option>
+                                        <option>High</option>
+                                        <option>Low</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="studentAssignmentStatus">Progress</label>
+                                    <select id="studentAssignmentStatus" name="status">
+                                        <option>Pending</option>
+                                        <option>In Progress</option>
+                                        <option>Completed</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="studentAssignmentReminder">Remind me</label>
+                                    <select id="studentAssignmentReminder" name="reminderDays">
+                                        <option value="7">1 week before</option>
+                                        <option value="3" selected>3 days before</option>
+                                        <option value="1">1 day before</option>
+                                        <option value="0">On the due date</option>
+                                        <option value="-1">No browser alert</option>
+                                    </select>
+                                </div>
+                                <div class="form-span">
+                                    <label for="studentAssignmentNotes">Notes / instructions</label>
+                                    <textarea id="studentAssignmentNotes" name="description" rows="3" maxlength="5000"></textarea>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Add assignment</button>
+                        </form>
+                    </details>
+                </div>
+                <div class="view-toolbar">
+                    <div class="calendar-controls hidden" id="calendarControls">
+                        <button class="btn btn-outline" id="calendarPrevious" type="button" aria-label="Previous month">‹</button>
+                        <strong id="calendarMonthLabel"></strong>
+                        <button class="btn btn-outline" id="calendarToday" type="button">Today</button>
+                        <button class="btn btn-outline" id="calendarNext" type="button" aria-label="Next month">›</button>
+                    </div>
+                    <span id="viewSummary" class="muted"></span>
+                </div>
+                <div id="studentAssignments" class="assignment-view" data-view="table"></div>
+
+                <div class="section-title spaced">
+                    <div>
+                        <h2>My submissions</h2>
+                        <p class="muted">Check your review status and administrator feedback.</p>
+                    </div>
+                </div>
+                <div id="mySubmissions" class="card-grid"></div>
+            </section>
+
+            <!-- Super Admin workspace -->
+            <section id="adminView" class="hidden">
+                <div class="admin-grid">
+                    <div class="panel">
+                        <h2>Create an assignment</h2>
+                        <p class="muted">Publish coursework for all registered students.</p>
+                        <form id="createAssignmentForm">
+                            <label for="assignmentTitle">Assignment title</label>
+                            <input id="assignmentTitle" name="title" maxlength="180" required>
+
+                            <label for="assignmentSubject">Subject</label>
+                            <input id="assignmentSubject" name="subject" maxlength="120" required>
+
+                            <label for="assignmentDescription">Instructions</label>
+                            <textarea id="assignmentDescription" name="description" rows="4"
+                                      maxlength="5000" required></textarea>
+
+                            <label for="assignmentDue">Due date</label>
+                            <input id="assignmentDue" name="due_date" type="date" required>
+
+                            <button class="btn btn-primary full" type="submit">
+                                Publish assignment
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="panel">
+                        <h2>Registered students</h2>
+                        <p class="muted">Overview of student activity.</p>
+                        <div id="studentDirectory"></div>
+                    </div>
+                </div>
+
+                <div class="section-title spaced">
+                    <div>
+                        <h2>Submission review queue</h2>
+                        <p class="muted">Review work, leave feedback, and make a decision.</p>
+                    </div>
+                    <select id="reviewFilter" aria-label="Filter submissions">
+                        <option value="All">All submissions</option>
+                        <option value="Pending">Pending review</option>
+                        <option value="Accepted">Accepted</option>
+                        <option value="Declined">Declined</option>
+                    </select>
+                </div>
+                <div id="adminSubmissions" class="card-grid"></div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Student submission dialog -->
+    <dialog id="submitDialog" class="dialog">
+        <form id="submitForm">
+            <h2 id="submitHeading">Submit your work</h2>
+            <p id="submitDescription" class="muted"></p>
+
+            <label for="submissionFile">Choose a document</label>
+            <input id="submissionFile" name="assignment" type="file"
+                   accept=".pdf,.doc,.docx,.txt" required>
+            <small>PDF, DOC, DOCX or TXT. Maximum file size: 5 MB.</small>
+
+            <div class="button-row">
+                <button id="cancelSubmit" class="btn btn-outline" type="button">Cancel</button>
+                <button class="btn btn-primary" type="submit">Submit work</button>
+            </div>
+        </form>
+    </dialog>
+
+    <!-- Admin review dialog -->
+    <dialog id="reviewDialog" class="dialog">
+        <form id="reviewForm">
+            <h2 id="reviewHeading">Review submission</h2>
+            <p id="reviewStudent" class="muted"></p>
+
+            <label for="reviewFeedback">Feedback for the student</label>
+            <textarea id="reviewFeedback" rows="5" maxlength="3000"
+                      placeholder="Explain your decision..."></textarea>
+
+            <p class="muted">Declining a submission requires feedback.</p>
+            <div class="button-row wrap">
+                <button id="cancelReview" class="btn btn-outline" type="button">Cancel</button>
+                <button class="btn btn-danger" type="button" data-decision="Declined">Decline</button>
+                <button class="btn btn-primary" type="button" data-decision="Accepted">Accept</button>
+            </div>
+        </form>
+    </dialog>
+
+    <footer class="footer">StudyFlow © 2026 · Learn at your own pace.</footer>
+    <aside id="overdueReminderBar" class="overdue-reminder-bar hidden" role="status" aria-live="polite">
+        <span class="overdue-reminder-icon" aria-hidden="true">!</span>
+        <span class="overdue-reminder-copy">
+            <strong id="overdueReminderTitle">A quick deadline reminder</strong>
+            <span id="overdueReminderMessage"></span>
+        </span>
+        <a class="overdue-reminder-link" href="#studentAssignments">Review assignments</a>
+    </aside>
+</body>
+</html>
